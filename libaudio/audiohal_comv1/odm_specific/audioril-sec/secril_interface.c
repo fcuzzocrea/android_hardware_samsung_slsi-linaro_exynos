@@ -25,7 +25,7 @@
 
 #include "AudioRil.h"
 #include "secril_interface.h"
-#include "voice_definition.h"
+#include "../voice_definition.h"
 
 /* The path of RIL Audio Client Library */
 #define RIL_CLIENT_LIBPATH "libsecril-client.so"
