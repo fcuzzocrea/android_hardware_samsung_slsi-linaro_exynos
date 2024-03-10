@@ -3116,6 +3116,12 @@ static ssize_t in_read(struct audio_stream_in *stream, void* buffer, size_t byte
     }
 
     if (in->common.stream_status == STATUS_STANDBY) {
+#ifdef SUPPORT_STHAL_INTERFACE
+        while (in->common.stream_type != ASTREAM_CAPTURE_HOTWORD && proxy_check_sthalstate(adev->proxy)) {
+            ALOGI("%s-%s: Ok-Google is running, waiting it to stop", stream_table[in->common.stream_type], __func__);
+            usleep(1500);
+        }
+#endif
         in->common.stream_status = STATUS_READY;
         ALOGI("%s-%s: transited to Ready", stream_table[in->common.stream_type], __func__);
 
