@@ -95,6 +95,10 @@ char * usage_table[AUSAGE_CNT] = {
     [AUSAGE_HOTWORD_RECORD]         = "hotword_record",
 #endif
 
+#ifdef SEC_AUDIO_SUPPORT_LISTENBACK_DSPEFFECT
+    [AUSAGE_LISTENBACK]             = "listenback",
+#endif
+
     [AUSAGE_LOOPBACK]               = "factory_loopback",
     [AUSAGE_LOOPBACK_NODELAY]       = "factory_loopback_nodelay",
     [AUSAGE_LOOPBACK_REALTIME]      = "factory_loopback_realtime",
@@ -151,6 +155,10 @@ char * usage_path_table[AUSAGE_CNT] = {
     [AUSAGE_HOTWORD_RECORD]         = "hotword_record",    //dummy definition not used
 #endif
 
+#ifdef SEC_AUDIO_SUPPORT_LISTENBACK_DSPEFFECT
+    [AUSAGE_LISTENBACK]             = "listenback",
+#endif
+
     [AUSAGE_LOOPBACK]               = "loopback_packet",
     [AUSAGE_LOOPBACK_NODELAY]       = "loopback",
     [AUSAGE_LOOPBACK_REALTIME]      = "realtimeloopback",
@@ -168,6 +176,9 @@ char * device_table[DEVICE_CNT] = {
     [DEVICE_HANDSET]                        = "handset",
     [DEVICE_SPEAKER]                        = "speaker",
     [DEVICE_SPEAKER_DEX]                    = "dex-speaker",
+#ifdef SEC_AUDIO_SUPPORT_GAMECHAT_SPK_AEC
+    [DEVICE_SPEAKER_GAMING]                = "gaming-speaker",
+#endif
     [DEVICE_SPEAKER_DUAL]                   = "dual-speaker",
     [DEVICE_HEADSET]                        = "headset",
     [DEVICE_HEADPHONE]                      = "headphone",
@@ -178,7 +189,7 @@ char * device_table[DEVICE_CNT] = {
     [DEVICE_SPEAKER_AND_HEADSET]            = "speaker-headset",
     [DEVICE_SPEAKER_AND_HEADPHONE]          = "speaker-headphone",
     [DEVICE_SPEAKER_AND_USB_HEADSET]        = "speaker-usb-headset",
-    [DEVICE_SPEAKER_AND_BT_SCO_HEADSET]         = "speaker-bt-sco-headset",
+    [DEVICE_SPEAKER_AND_BT_SCO_HEADSET]     = "speaker-bt-sco-headset",
 
     // BT A2DP Offload playback devices
 #ifdef SUPPORT_BTA2DP_OFFLOAD
@@ -204,7 +215,9 @@ char * device_table[DEVICE_CNT] = {
     [DEVICE_HEADPHONE_MIC]                  = "headphone-mic",
     [DEVICE_SPEAKER_MIC]                    = "speaker-mic",
     [DEVICE_SPEAKER_DEX_MIC]                = "dex-speaker-mic",
-
+#ifdef SEC_AUDIO_SUPPORT_GAMECHAT_SPK_AEC
+    [DEVICE_SPEAKER_GAMING_MIC]             = "gaming-speaker-mic",
+#endif
     [DEVICE_STEREO_MIC]                     = "dualmic",
     [DEVICE_QUAD_MIC]                       = "multi-mic",
     [DEVICE_FULL_MIC]                       = "full-mic",

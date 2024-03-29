@@ -27,6 +27,9 @@ typedef enum {
     DEVICE_HANDSET                = 0,   // handset or receiver
     DEVICE_SPEAKER,
     DEVICE_SPEAKER_DEX,
+#ifdef SEC_AUDIO_SUPPORT_GAMECHAT_SPK_AEC
+    DEVICE_SPEAKER_GAMING,
+#endif
     DEVICE_SPEAKER_DUAL,
     DEVICE_HEADSET,                      // headphone + mic
     DEVICE_HEADPHONE,                    // headphone or earphone
@@ -63,7 +66,9 @@ typedef enum {
     DEVICE_HEADPHONE_MIC,
     DEVICE_SPEAKER_MIC,
     DEVICE_SPEAKER_DEX_MIC,
-
+#ifdef SEC_AUDIO_SUPPORT_GAMECHAT_SPK_AEC
+    DEVICE_SPEAKER_GAMING_MIC,
+#endif
     DEVICE_STEREO_MIC,
     DEVICE_QUAD_MIC,
     DEVICE_FULL_MIC,

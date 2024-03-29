@@ -83,6 +83,10 @@ typedef enum {
     AUSAGE_HOTWORD_RECORD,
 #endif
 
+#ifdef SEC_AUDIO_SUPPORT_LISTENBACK_DSPEFFECT
+    AUSAGE_LISTENBACK,
+#endif
+
     // Factory Mode Test Usages
     AUSAGE_LOOPBACK_MIN,
     AUSAGE_LOOPBACK = AUSAGE_LOOPBACK_MIN, //packet
