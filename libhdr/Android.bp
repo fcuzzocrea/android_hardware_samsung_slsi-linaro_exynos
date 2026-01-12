@@ -52,9 +52,11 @@ cc_library_shared {
     cflags: [
 	"-Wno-unused-function",
         "-DLOG_TAG=\"libhdr\"",
-        "-DUSE_FULL_ST2094_40",
         "-DLIBHDR_PLUGIN_INCLUDED",
-    ],
+    ] + select(soong_config_variable("openmax", "USE_FULL_ST2094_40"), {
+        "true": ["-DUSE_FULL_ST2094_40"],
+        default: [],
+    }),
     local_include_dirs: [
         "include",
     ],
